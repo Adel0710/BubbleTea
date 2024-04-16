@@ -10,7 +10,7 @@ products = [
 
 def home(request):
     context = {'products': products}
-    return render(request, 'home.html', context)
+    return render(request, 'base/home.html', context)
 
 def login(request):
     return render(request, 'login.html')
