@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #FEF6D7;
+    & .logo{
+        & img{
+            width: 135px;
+            object-fit: cover;
+        }
+    }
+    & .nav{
+        display: flex;
+        list-style-type: none;
+        width: 15rem;
+        align-items: center;
+        justify-content: space-around;
+        & li{
+            & a{
+                text-transform: capitalize;
+                color: black;
+            }
+        }
+    }
+}

@@ -1,7 +1,6 @@
 {% extends 'main.html' %}
 {% load static %}
 
-
 {% block content %}
 <div class="home_slider">
     <div class="home_slider--text">
@@ -14,6 +13,27 @@
     </div>
     <div class="home_slider--img">
         <img src="{% static 'images/slider_home.jpg' %}" alt="slider_home">
+    </div>
+</div>
+<div class="ourTeaHouse">
+    <h2 class="ourTeamHouseTitle"> our team house</h2>
+    <div class="place">
+        <div class="placeImage">
+            <img src="{% static 'images/firstPlace.jpg' %}" alt="slider_home">
+        </div>
+        <div class="placeText">
+            <h2>A place to fresh the mind</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, nesciunt!</p>
+        </div>
+    </div>
+    <div class="place">
+        <div class="placeText">
+            <h2>A place to cheers bubble tea</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rerum.</p>
+        </div>
+        <div class="placeImage">
+            <img src="{% static 'images/firstPlace.jpg' %}" alt="slider_home">
+        </div>
     </div>
 </div>
 <div class="home_product">
