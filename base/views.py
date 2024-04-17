@@ -24,6 +24,14 @@ def login(request):
 def register(request):
     return render(request, 'base/register.html')
 
-def dashboard(request):
+def profile(request):
     context = {'orders': orders}
-    return render(request,'base/dashboard.html', context)
+    return render(request,'base/profile.html', context)
+
+def order(request, pk):
+    order = None
+    for i in orders:
+        if i['id'] == int(pk):
+            order = i
+    context = {'order': order}
+    return render(request, 'base/order.html', context)
