@@ -1,10 +1,24 @@
 {% extends 'main.html' %}
+{% load static %}
+
 
 {% block content %}
-
-<h1>Home Template</h1>
-
-<div>
+<div class="home_slider">
+    <div class="home_slider--text">
+        <h1>Enjoy your self in the world of tea tok</h1>
+        <p>you can find a large number of different flavors to prepare your bubble tea.</p>
+        <div class="home_slider--text-btns">
+            <a href="/login" class="btn_login">login</a>
+            <a href="/register" class="btn_register">register</a>
+        </div>
+    </div>
+    <div class="home_slider--img">
+        <img src="{% static 'images/slider_home.jpg' %}" alt="slider_home">
+    </div>
+</div>
+<div class="home_product">
+    <h2>Our special products</h2>
+    <p>Le Bubble Tea est une boisson relativement saine, contenant peu de matières grasses et peu de calories. Les perles de tapioca sont riches en glucides, mais elles sont pareillement riches en fibres et en fer.</p>
     <div>
         {% for product in products %}
             <div>
