@@ -7,8 +7,9 @@
 <div>
     <div>
         {% for order in orders %}
+            
             <div>
-                <h5>{{order.id}} -- <a href="/order/{{order.id}}">{{order.name}}</a></h5>
+                <h5>{{order.id}} -- <a href="{% url 'order' order.id %}">{{order.name}}</a></h5>
             </div>
 
         {% endfor %}
