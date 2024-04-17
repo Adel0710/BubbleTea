@@ -10,17 +10,17 @@ rooms = [
 ]
 
 def home(request):
-    context = {'rooms':rooms}
+    context = {'':home}
     return render(request, 'base/home.html', context)
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'base/dashboard.html')
 
 def shop(request):
-    return render(request, 'shop.html')
+    return render(request, 'base/shop.html')
 
 def admin(request):
-    return render(request , 'admin.html')
+    return render(request , 'base/admin.html')
 
 def room (request,pk):
     room = None
