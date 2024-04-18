@@ -2,33 +2,34 @@
 {% load static %}
 
 {% block content %}
-<div class="login_img">
-    <img src="{% static 'images/login_bg.jpg' %}" alt="slider_home">
-</div>
-<div class="login_form">
-    <div class="login_form_text">
-        <h1>Hello again !</h1>
+<div class="loginPages">
+    <div class="login_img">
+        <img src="{% static 'images/login_bg.jpg' %}" alt="slider_home">
     </div>
-
-    <form action="/loginForm" method="post">
-        <div class="input-box">
-            <input type="email" placeholder="email" name="email">
-            <ion-icon name="at-outline"></ion-icon>
+    <div class="login_form">
+        <div class="login_form_text">
+            <h1>Hello again !</h1>
         </div>
-        <div class="input-box">
-            <input type="password" placeholder="Password" name="password">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-        </div>
-        
-        <div class="button">
-            <button type="submit" class="btn1">Login</button>
-        </div>
+    
+        <form action="/loginForm" method="post">
+            <div class="input-box">
+                <input type="email" placeholder="email" name="email">
+                <ion-icon name="at-outline" class="icon-form"></ion-icon>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password">
+                <ion-icon name="lock-closed-outline" class="icon-form"></ion-icon>
+            </div>
+            <div class="register-link">
+                <p>Don't have an account ? <a href="/register">Register</a></p>
+            </div>
             
-        <div class="register-link">
-            <p>Don't have an account ? <a href="/register">Register</a></p>
-        </div>
-    </form>
-
+            <div class="button">
+                <button type="submit" class="btn1">Login</button>
+            </div>
+        </form>
+    
+    </div>
+    
 </div>
-
 {% endblock content %}

@@ -1,0 +1,124 @@
+.home_slider{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // padding: 4rem 1rem;
+    &--img{
+        & img{
+            width: 100%;
+            height: 40rem;
+            object-position: top;
+        }
+    }
+    &--text{
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        & h1{
+            font-size: 5rem;
+            text-transform: capitalize;
+            width: 30rem;
+        }
+        &-btns{
+            display: flex;
+            & a{
+                background-color: #FEF6D7;
+                color: #33574f;
+                padding: 10px 20px;
+                border: 1px solid transparent;
+                border-radius: 5px;
+                text-transform: capitalize;
+            }
+            & .btn_register{
+                margin-left: 1rem;
+            }
+        }
+    }
+} 
+
+h2,h3{
+    color: #cd9446;
+}
+
+.ourTeaHouse{
+    background-color: #F2EBDF;
+    padding: 4rem 1rem 6rem;
+    margin-top: -4px;
+    & .place{
+        display: flex;
+        margin-top: 5rem;
+        justify-content: center;
+        align-items: center;
+    
+        & .placeImage{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 20rem;
+                height: 15rem;
+                border-radius: 5px;
+            }
+        }
+        & .placeText{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30rem;
+            & h2{
+                margin-bottom: 20px;
+            }
+        
+        }
+        & .leftCard{
+            margin-left: 70px;
+        }   
+    }
+}
+
+.home_product{
+    background-color: #364a31;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+    & h2{
+        padding: 3rem 0;
+    }
+    & .pres{
+        text-align: center;
+        width: 45rem;
+        margin-bottom: 5rem;
+    }
+    &--images{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-evenly;
+        & .card{
+            width: 20rem;
+            &_img{
+                width: 100%;
+                & img{
+                    border-radius: 5px;
+                    height: 250px;
+                    width: 100%;
+                }
+            }
+            &_txt{
+                display: flex;
+                justify-content: space-between;
+                padding: 15px;
+            }
+        }
+        
+    }
+    & button{
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+        & .arrow{
+            margin-left: 5px;
+        }
+    }
+}

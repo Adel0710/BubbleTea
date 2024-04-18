@@ -3,9 +3,9 @@ from django.shortcuts import render
 # Create your views here.
 
 products = [
-    {'id': 1, 'name': 'BubbleTea 1'},
-    {'id': 2, 'name': 'BubbleTea 2'},
-    {'id': 3, 'name': 'BubbleTea 3'},
+    {'id': 1, 'name': 'BubbleTea 1', 'images':'https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'prix': '12.99$'},
+    {'id': 2, 'name': 'BubbleTea 2', 'images':'https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'prix': '6.99$'},
+    {'id': 3, 'name': 'BubbleTea 3', 'images':'https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'prix': '3.99$'},
 ]
 
 orders = [

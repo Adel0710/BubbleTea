@@ -1,0 +1,21 @@
+footer{
+    background-color: #F2EBDF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    margin-top: -2px;
+    & h3{
+        color: black;
+    }
+    & .foot_txt{
+        & ul{
+            display: flex;
+            list-style-type: none;
+            width: 15rem;
+            justify-content: space-between;
+            font-size: 30px;
+            color: black;
+        }
+    }
+}

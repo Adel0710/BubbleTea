@@ -1,15 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import 'sass/home';
+@import 'sass/header';
+@import 'sass/variable';
+@import 'sass/footer';
+@import 'sass/login';
+
 *{
     padding: 0;
     margin: 0;
     font-family: "Roboto", sans-serif;
 }
+h1,h2,h3{
+    font-family: "Cinzel", serif;
+}
+h2{
+    text-align: center;
+    font-size: 2.5rem;
+}
+h3{
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+button{
+    background-color: #FEF6D7;
+    color: #33574f;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
 img{
     width: 300px;
     object-fit: cover;
 }
+
 a{
     text-decoration: none;
 }
-@import 'sass/home';
-@import 'sass/header'
