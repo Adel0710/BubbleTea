@@ -1,34 +1,61 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.db import connection
+from .models import Register
+
 
 # Create your views here.
 
-rooms = [
-    {'id': 1, 'name': 'dashboard'},
-    {'id': 2, 'name': 'shop'}
-    
+products = [
+    {'id': 1, 'name': 'BubbleTea 1'},
+    {'id': 2, 'name': 'BubbleTea 2'},
+    {'id': 3, 'name': 'BubbleTea 3'},
+]
+
+orders = [
+    {'id': 1, 'name': 'Order 1'},
+    {'id': 2, 'name': 'Order 2'},
+    {'id': 3, 'name': 'Order 3'},
 ]
 
 def home(request):
-    context = {'':home}
+    context = {'products': products}
     return render(request, 'base/home.html', context)
 
-def dashboard(request):
-    return render(request, 'base/dashboard.html')
+def login(request):
+    return render(request, 'base/login.html')
 
-def shop(request):
-    return render(request, 'base/shop.html')
+def register(request):
+    return render(request, 'base/register.html')
 
-def admin(request):
-    return render(request , 'base/admin.html')
+def profile(request):
+    context = {'orders': orders}
+    return render(request,'base/profile.html', context)
 
-def room (request,pk):
-    room = None
-    for i in rooms:
+def userreg(request):
+    return render(request, "base/userreg.html")
+    
+
+def order(request, pk):
+    order = None
+    for i in orders:
         if i['id'] == int(pk):
-            room = i
-            context = {'room': room}
-    return render(request, 'base/room.html')
+            order = i
+    context = {'order': order}
+    return render(request, 'base/order.html', context)
 
-def createOrder(request):
-    return render(request)
+
+
+def insertregister(request):
+    vuid = request.POST("id");
+    vunom = request.POST("firstName");
+    vuprenom = request.POST("lastName")
+    vuemail = request.POST("email");
+    vuusername = request.POST("username");
+    vupassword = request.POST("password");
+    us = Register(id = vuid, nom = vunom, prenom = vuprenom, email = vuemail, username = vuusername, password = vupassword);
+    
+    
+    return render(request, 'base/register.html',{})
+
+
+

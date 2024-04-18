@@ -53,6 +53,7 @@ CREATE TABLE `users` (
   `nom` varchar(100) DEFAULT NULL,
   `prenom` varchar(100) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
   `date_naissance` date DEFAULT NULL,
   `pays` varchar(255) DEFAULT NULL,
   `ville` varchar(255) DEFAULT NULL,

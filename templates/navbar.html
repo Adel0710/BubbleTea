@@ -1,5 +1,14 @@
-
-    <a href="/">
-        <h1>LOGO</h1>
-    </a>
-    
+{% load static %}
+<nav>
+    <div class="logo">
+        <a href="/">
+            <img src="{% static 'images/logo_bubble.png' %}" alt="slider_home">
+        </a>
+    </div>
+    <ul class="nav">
+        <li><a href="/">home</a></li>
+        <li><a href="/login">login</a></li>
+        <li><a href="/register">register</a></li>
+        <!-- <li><a href=""></a></li> -->
+    </ul>
+</nav>
