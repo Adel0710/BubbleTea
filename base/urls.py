@@ -12,5 +12,7 @@ urlpatterns = [
     path('store/', views.store, name="store"),
     
 
-    path('orderView', views.viewOrder, name="viewOrder")
+    path('orderView', views.viewOrder, name="viewOrder"),
+    path('update_item/', views.updateItem, name="update_item"),
+    path('process_order/', views.processOrder, name="process_order"),
 ]
