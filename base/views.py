@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .forms import OrderForm
+
 # Create your views here.
 
 products = [
@@ -35,3 +37,20 @@ def order(request, pk):
             order = i
     context = {'order': order}
     return render(request, 'base/order.html', context)
+
+def viewOrder(request):
+    form = OrderForm()
+    context = {'form': form}
+    return render(request, 'base/order_form.html', context)
+
+def store(request):
+    context = {}
+    return render(request, 'base/store.html', context)
+
+def checkout(request):
+    context = {}
+    return render(request, 'base/checkout.html', context)
+
+def cart(request):
+    context = {}
+    return render(request, 'base/cart.html', context)
