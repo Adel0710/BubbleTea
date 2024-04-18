@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import *
 from .forms import OrderForm
 
 # Create your views here.
@@ -44,7 +44,8 @@ def viewOrder(request):
     return render(request, 'base/order_form.html', context)
 
 def store(request):
-    context = {}
+    products = Product.objects.all()
+    context = {'products': products}
     return render(request, 'base/store.html', context)
 
 def checkout(request):
