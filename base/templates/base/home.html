@@ -31,31 +31,42 @@
         </div>
     </div>
 </div>
-<div class="home_product">
+<div class="home_product" id="home_product">
     <h2>Our special products</h2>
     <p class="pres">Le Bubble Tea est une boisson relativement saine, contenant peu de matières grasses et peu de calories. Les perles de tapioca sont riches en glucides, mais elles sont pareillement riches en fibres et en fer.</p>
-    <div class="home_product--images">
+        <!-- <a href="{% url 'viewOrder' %}">View Order</a> -->
 
-<h1>Home Template</h1>
-
-<div>
-
-    <a href="{% url 'viewOrder' %}">View Order</a>
-
-    <div>
-        {% for product in products %}
-            <div class="card">
-                <div class="card_img">
-                    <img src={{product.images}} alt={{product.name}}>
+        <div class="home_product--images">
+            {% for product in products %}
+                <div class="card">
+                    <div class="card_img">
+                        <img src={{product.images}} alt={{product.name}}>
+                    </div>
+                    <div class="card_txt">
+                        <h5>{{product.name}}</h5>
+                        <p> {{product.prix}} </p>
+                    </div>
                 </div>
-                <div class="card_txt">
-                    <h5>{{product.name}}</h5>
-                    <p> {{product.prix}} </p>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-    <button>visit shop <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon></button>
+            {% endfor %}
+        </div>
+        <a href="{% url 'store' %}" class="button">visit store <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon></a>
 </div>
+
+{% for item in items %}
+                    <div class="cart-row">
+                        <div style="flex: 2;"><img class="row-image" src="{{item.imageURL}}"></div>
+                        <div style="flex: 2;"><strong><p>{{item.name}}</p></strong></div>
+                        <div style="flex: 1;"><strong><p>{{item.price|floatformat:2}}€</p></strong></div>
+                        <div style="flex: 1;">
+                            <p class="quantity">x{{item.quantity}}</p>
+                            <div class="quantity">
+                                <img data-product={{item.id}} data-action="add" class="chg-quantity update-cart" src="{% static  'images/3+arrow-up.png' %}">
+                        
+                                <img data-product={{item.id}} data-action="remove" class="chg-quantity update-cart" src="{% static  'images/2+arrow-down.png' %}">
+                            </div>
+                        </div>
+                        <div style="flex: 1;"><p>{{item.get_total}}€</p></div>
+                    </div>
+                {% endfor %}
 
 {% endblock content %}

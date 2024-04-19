@@ -1,23 +1,115 @@
 {% extends 'main.html' %}
-{% load static %}
-{% block content %}
-    <div class= "row">
-        {% for product in products %}
-        <div class="col-lg-4">
-            <img class="thumbnail" src="{{product.imageURL}}">
-            <div class="box-element product">
-                <h6><strong>{{product.name}}</strong></h6>
-                <hr>
 
-                <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
-                <a class="btn btn-outline-success" href="#">View</a>
-                <h4 style="display: inline-block; float: right"><strong>{{product.price|floatformat:2}}€</strong></h4>
+{% load static %}
+
+{% block content %}
+    <div class="store">
+        <h1>Store</h1>
+        <div class= "store_rows">
+            <div class="store_rows--card">
+                <div class="store_rows--card_img">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="card_text">
+                    <div class="card_text--title">
+                        <h3><strong>product name</strong></h3>
+                        <h4><strong>19.22€</strong></h4>
+                    </div>  
+                    <hr>
+                    <div class="card_text--btn">
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                        <a class="btn btn-outline-success button" href="#">View</a>
+                    </div>
+                </div>
             </div>
+            <div class="store_rows--card">
+                <div class="store_rows--card_img">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="card_text">
+                    <div class="card_text--title">
+                        <h3><strong>product name</strong></h3>
+                        <h4><strong>19.22€</strong></h4>
+                    </div>
+
+                    <hr>
+                    <div class="card_text--btn">
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                        <a class="btn btn-outline-success button" href="#">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="store_rows--card">
+                <div class="store_rows--card_img">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="card_text">
+                    <div class="card_text--title">
+                        <h3><strong>product name</strong></h3>
+                        <h4><strong>19.22€</strong></h4>
+                    </div>
+
+                    <hr>
+                    <div class="card_text--btn">
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                        <a class="btn btn-outline-success button" href="#">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="store_rows--card">
+                <div class="store_rows--card_img">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="card_text">
+                    <div class="card_text--title">
+                        <h3><strong>product name</strong></h3>
+                        <h4><strong>19.22€</strong></h4>
+                    </div>
+
+                    <hr>
+                    <div class="card_text--btn">
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                        <a class="btn btn-outline-success button" href="#">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="store_rows--card">
+                <div class="store_rows--card_img">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/4013151/pexels-photo-4013151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="card_text">
+                    <div class="card_text--title">
+                        <h3><strong>product name</strong></h3>
+                        <h4><strong>19.22€</strong></h4>
+                    </div>
+                    <hr>
+                    <div class="card_text--btn">
+                        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                        <a class="btn btn-outline-success button" href="#">View</a>
+                    </div>
+                </div>
+            </div>
+            {% for product in products %}
+                <div class="store_rows--card">
+                    <div class="store_rows--card_img">
+                            <img class="thumbnail" src="{{product.imageURL}}">
+                    </div>
+                    <div class="box-element product">
+                        <div class="card_text--title">
+                            <h3><strong>product name</strong></h3>
+                            <h4><strong>19.22€</strong></h4>
+                        </div>                        <hr>
+
+                        <div class="card_text--btn">
+                            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                            <a class="btn btn-outline-success button" href="#">View</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
         </div>
-        {% endfor %}
-        
     </div>
-<h3>Store</h3>
 
 {% endblock content%}
 
