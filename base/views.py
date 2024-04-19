@@ -1,10 +1,16 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from .models import *
 from .forms import OrderForm
 from django.http import JsonResponse
 import json
 import datetime
 from . utils import cookieCart
+=======
+from django.db import connection
+from .models import Register
+
+>>>>>>> 40d6fd209697e2cb5eb4e49e63d11a7a7034631d
 
 # Create your views here.
 
@@ -34,6 +40,10 @@ def profile(request):
     context = {'orders': orders}
     return render(request,'base/profile.html', context)
 
+def userreg(request):
+    return render(request, "base/userreg.html")
+    
+
 def order(request, pk):
     order = None
     for i in orders:
@@ -42,6 +52,7 @@ def order(request, pk):
     context = {'order': order}
     return render(request, 'base/order.html', context)
 
+<<<<<<< HEAD
 def viewOrder(request):
     form = OrderForm()
     context = {'form': form}
@@ -145,3 +156,21 @@ def processOrder(request):
     else:
         print('User is not logged in..')
     return JsonResponse('Payment complete!', safe= False)
+=======
+
+
+def insertregister(request):
+    vuid = request.POST("id");
+    vunom = request.POST("firstName");
+    vuprenom = request.POST("lastName")
+    vuemail = request.POST("email");
+    vuusername = request.POST("username");
+    vupassword = request.POST("password");
+    us = Register(id = vuid, nom = vunom, prenom = vuprenom, email = vuemail, username = vuusername, password = vupassword);
+    
+    
+    return render(request, 'base/register.html',{})
+
+
+
+>>>>>>> 40d6fd209697e2cb5eb4e49e63d11a7a7034631d
