@@ -5,6 +5,8 @@
 @import 'sass/variable';
 @import 'sass/footer';
 @import 'sass/login';
+@import 'sass/cart';
+@import 'sass/store';
 
 *{
     padding: 0;
@@ -24,13 +26,21 @@ h3{
     text-transform: capitalize;
     margin-bottom: 20px;
 }
-button{
+button,.button{
     background-color: #FEF6D7;
     color: #33574f;
     padding: 10px 20px;
     border: 1px solid transparent;
     border-radius: 5px;
     text-transform: capitalize;
+    cursor: pointer;
+}
+.btn_arrow{
+    display: flex;
+    align-items: center;
+    & .arrow{
+        margin-left: 5px;
+    }
 }
 img{
     width: 300px;
