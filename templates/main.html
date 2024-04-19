@@ -26,7 +26,30 @@
             }
             return cookieValue;
         }
-        const csrftoken = getToken('csrftoken');
+        var csrftoken = getToken('csrftoken');
+
+        //getting the cookie in browser to parse into a JSON object to use in JS
+        function getCookie(name){
+            //split cookie to get name=value Array
+            var cookieArr = document.cookie.split(";");
+            //in the array
+            for(var i = 0; i < cookieArr.length; i++){
+                var cookiePair = cookieArr[i].split("=");
+                if(name == cookiePair[0].trim()){
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            //if not found
+            return null
+        }
+
+        var cart = JSON.parse(getCookie('cart'))
+        if(cart == undefined){
+            cart = {}
+            console.log('Cart was created')
+            document.cookie = 'cart='+JSON.stringify(cart) + ";domain=;path=/"
+        }
+        console.log('Cart:', cart)
     </script>
 </head>
 <body>
