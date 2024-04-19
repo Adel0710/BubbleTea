@@ -30,7 +30,7 @@
                         <input class="form-control" type="text" name="zipcode" placeholder="Zipcode..">
                     </div>
                     <div class="form-field">
-                        <input class="form-control" type="text" name="Country" placeholder="Country..">
+                        <input class="form-control" type="text" name="country" placeholder="Country..">
                     </div>
                     
 
@@ -143,6 +143,10 @@
         .then((data) => {
             console.log('Success:', data);
             alert('Transaction completed');
+
+            cart = {}
+            document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+            
             window.location.href = "{% url 'store' %}"
         })
     }
