@@ -1,4 +1,4 @@
-#!/home/cisse_j/etna_pool/projet_django/env/bin/python3
+#!/home/planch_a/Python_Django/bubbletea/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

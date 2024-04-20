@@ -5,6 +5,28 @@ from django.http import JsonResponse
 import json
 import datetime
 from . utils import cookieCart, cartData, guestOrder
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        token = response.data["access"]
+        response.set_cookie("Tapioca_pearl", token, httponly=True)
+        return response
+
+
+class Home(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        content = {'message': 'Hello, World!'}
+        return Response(content)
+
 
 # Create your views here.
 
@@ -29,6 +51,12 @@ def login(request):
 
 def register(request):
     return render(request, 'base/register.html')
+
+def registerForm(request):
+    print()
+    # if request.method == 'POST':
+    #     query = Customer.objects.raw("INSERT INTO users(lastname, firstname, email, password) VALUES ('%s','%s','%s','%s')")
+    #     print(query)
 
 def profile(request):
     context = {'orders': orders}
