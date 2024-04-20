@@ -1,12 +1,11 @@
 from django.urls import path
 from . import views
 from django.urls import path
-from .views import MyTokenObtainPairView, Home
 
 urlpatterns = [
-    path("token/", MyTokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path('', Home.as_view()),
-    path('login/', views.login, name="login"),
+    path('', views.store, name='store'),
+    path('login/', views.login, name ="login"),
+    #path('login/', views.LoginView.as_view(), name="login"),
     path('register/', views.register, name="register"),
     path('profile/', views.profile, name="profile"),
     path('cart/', views.cart, name="cart"),

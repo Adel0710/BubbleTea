@@ -1,5 +1,9 @@
 import json
 from . models import *
+from django.conf import settings
+from datetime import timedelta
+import datetime
+import jwt
 
 def cookieCart(request):
     try:
@@ -83,3 +87,13 @@ def guestOrder(request, data):
             quantity = item['quantity']
         )
     return customer, order
+
+def generate_access_token(userid):
+    payload = {
+        'user_id': userid,
+        'exp': datetime.datetime.now(datetime.UTC) + timedelta(days=1, minutes=0),
+        'iat': datetime.datetime.now(datetime.UTC),
+    }
+
+    access_token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
+    return access_token
