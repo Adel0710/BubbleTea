@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="loginPages">
+    <div class="login_img register_img">
+        <!-- <img src="{% static 'images/reg.gif' %}" alt="slider_home"> -->
+        <div class="video-mask">
+            <video autoplay muted loop>
+                <source src="{% static 'videos/regi.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="login_form">
+        <div class="login_form_text">
+            <h1>Welcome !</h1>
+        </div>
+    
+        <form name="register" action="/register_form" method="post">
+            {% csrf_token %}
+            <div class="input-box">
+                <input type="text" placeholder="first_name" name="first_name" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="last_name" name="last_name" required>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+            
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" class="passwordInput"  title="Vous devez inserez au moins 1 chiffre, 1miniscule, 1majuscule et 12 caractere minimun" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" name="password" class="passwordInput"  title="Vous devez inserez au moins 1 chiffre, 1miniscule, 1majuscule et 12 caractere minimun" required>
+            </div>
+
+            <div class="register-link">
+                <p>Already have an account ? <a href="/login">Login</a></p>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn">Register</button>
+            </div>           
+            
+        </form>
+    
+    </div>
+</div>
+
+{% endblock content %}

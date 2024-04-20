@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>Home Template</h1>
+
+<div>
+
+    <a href="{% url 'viewOrder' %}">View Order</a>
+
+    <div>
+        {% for product in products %}
+            <div>
+                <h5>{{product.id}} -- {{product.name}}</h5>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
